@@ -134,26 +134,30 @@ int dy8[] = {-1, 0, 1, -1, 1, -1, 0, 1};
 
 // -------------------- Solve Function --------------------
 void solve() {
-    int w;
-    cin>>w;
-    if(w<=2){
-        cout<<"no"<<endl;
+    int n;
+    cin>>n;
+    vector<int> a(n);
+    for(int i = 0 ; i<n ; i++){
+        cin>>a[i];
     }
-    else{
-        if(w%2==0){
-            cout<<"yes"<<endl;
-        }
-        else{
-            cout<<"no"<<endl;
+    sort(a.begin(),a.end());
+    int mini = a[0];
+    for(int i = 0 ; i<n ; i++){
+        if(a[i]>mini){
+            cout<<a[i]<<endl;
+            return;
         }
     }
+    cout<<"NO"<<endl;
 }
  
 // -------------------- Main Function --------------------
 int main() {
 
     fastIO();
+
     solve();
+
     return 0;
 }
 
